@@ -1,6 +1,8 @@
 const  userModel = require("../model/user.model.js")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
+const emailService = require("../services/email.services.js")
+
 
 //--user register controller
 //--POST /api/auth/register
@@ -32,6 +34,8 @@ const bcrypt = require("bcrypt")
         },
         token
     })
+        await emailService.sendRegistrationEmail(user.email, user.name)
+
 
 }
 

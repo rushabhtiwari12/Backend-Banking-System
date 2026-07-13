@@ -1,4 +1,6 @@
-require("dotenv").config()
+require("dotenv").config({
+    quiet: true
+})
 
 const app = require("./src/app.js");
 const connectToDB = require("./src/config/db.js");
@@ -6,7 +8,6 @@ const dns = require("dns");
 
 dns.setServers(["1.1.1.1","8.8.8.8"])
 
-console.log(process.env.MONGO_URI);
 connectToDB();
 
 app.listen(3000, ()=>{
