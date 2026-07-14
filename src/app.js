@@ -16,6 +16,7 @@ const accountRouter = require("./routes/account.routes.js")
 /**
  * --Use Routes
  */
+
 app.use("/api/auth", authRouter)
 app.use("/api/accounts", accountRouter)
 

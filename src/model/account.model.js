@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+
 const accountSchema = new mongoose.Schema({
     user:{
         type:mongoose.Schema.Types.ObjectId,
@@ -24,7 +25,7 @@ const accountSchema = new mongoose.Schema({
     timestamps:true
 })
 
-accountSchema.index({user:1, status:1})
+accountSchema.index({user:1, status:1}) //these types of indexing are called compound indexing where two index are used to search the element.
 
 const accountModel = mongoose.model("account", accountSchema);
 
